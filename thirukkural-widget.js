@@ -9,7 +9,7 @@
       height: 60px;
       border-radius: 50%;
       background-color: #007bff;
-      background-image: url('https://github.com/RatheeshGitHub123/thirukural-bot/tree/main/images/logo.png');
+      background-image: url('https://raw.githubusercontent.com/RatheeshGitHub123/thirukural-bot/tree/main/images/logo.png');
       background-size: 60%;
       background-repeat: no-repeat;
       background-position: center;
@@ -174,7 +174,7 @@
     <div id="chatbot">
         <header>
             <div class="logo-title">
-                <img src="https://github.com/RatheeshGitHub123/thirukural-bot/tree/main/images/logo.png" alt="Bot Logo" class="logo">
+                <img src="https://raw.githubusercontent.com/RatheeshGitHub123/thirukural-bot/tree/main/images/logo.png" alt="Bot Logo" class="logo">
                 <span class="title">Thirukkural Bot</span>
             </div>
             <div style="display: flex;gap:3px;">
@@ -210,8 +210,8 @@
     toggleBtn.textContent = chatWindow.classList.contains("maximized") ? "🗕" : "🗖";
   });
 
-  const botAvatar = 'https://github.com/RatheeshGitHub123/thirukural-bot/tree/main/images/logo.png';
-  const userAvatar = 'https://github.com/RatheeshGitHub123/thirukural-bot/tree/main/images/user-avatar.png';
+  const botAvatar = 'https://raw.githubusercontent.com/RatheeshGitHub123/thirukural-bot/tree/main/images/logo.png';
+  const userAvatar = 'https://raw.githubusercontent.com/RatheeshGitHub123/thirukural-bot/tree/main/images/user-avatar.png';
 
   document.querySelector('.close-btn').onclick = () => {
     chatWindow.style.display = 'none';
