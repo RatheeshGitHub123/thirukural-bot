@@ -9,7 +9,7 @@
       height: 60px;
       border-radius: 50%;
       background-color: #007bff;
-      background-image: url('https://yourcdn.com/images/logo.png');
+      background-image: url('images/logo.png');
       background-size: 60%;
       background-repeat: no-repeat;
       background-position: center;
