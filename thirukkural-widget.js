@@ -236,7 +236,13 @@
     input.value = '';
 
     const url = `http://thirukural-backend.infy.uk/api/thirukkurals/search?word=${encodeURIComponent(text)}`;
-    fetch(url)
+    fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      })
       .then(res => res.json())
       .then(data => {
         if (data.length) {
@@ -278,7 +284,13 @@
   // Make showMoreExplanations accessible globally
   window.showMoreExplanations = function (id) {
     const url = `http://thirukural-backend.infy.uk/api/thirukkural/${id}`;
-    fetch(url)
+    fetch(url,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      })
       .then(res => res.json())
       .then(data => {
         const { Parimezhalagar_Urai, M_Varadharajanar, Solomon_Pappaiya } = data;
