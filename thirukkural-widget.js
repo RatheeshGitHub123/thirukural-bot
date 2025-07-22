@@ -235,7 +235,7 @@
     appendMessage(text, 'user', userAvatar);
     input.value = '';
 
-    const url = `http://127.0.0.1:8000/api/thirukkurals/search?word=${encodeURIComponent(text)}`;
+    const url = `http://thirukural-backend.infy.uk/api/thirukkurals/search?word=${encodeURIComponent(text)}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -277,7 +277,7 @@
 
   // Make showMoreExplanations accessible globally
   window.showMoreExplanations = function (id) {
-    const url = `http://127.0.0.1:8000/api/thirukkural/${id}`;
+    const url = `http://thirukural-backend.infy.uk/api/thirukkural/${id}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
