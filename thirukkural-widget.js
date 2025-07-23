@@ -235,7 +235,7 @@
     appendMessage(text, 'user', userAvatar);
     input.value = '';
 
-    const url = `https://thirukural-backend.infy.uk/api/thirukkurals/search?word=${encodeURIComponent(text)}`;
+    const url = `https://thirukural-bot-backend-production.up.railway.app/api/thirukkurals/search?word=${encodeURIComponent(text)}`;
     fetch(url, {
         method: 'GET',
         headers: {
@@ -283,7 +283,7 @@
 
   // Make showMoreExplanations accessible globally
   window.showMoreExplanations = function (id) {
-    const url = `https://thirukural-backend.infy.uk/api/thirukkural/${id}`;
+    const url = `https://thirukural-bot-backend-production.up.railway.app/api/thirukkurals/${id}`;
     fetch(url,{
         method: 'GET',
         headers: {
