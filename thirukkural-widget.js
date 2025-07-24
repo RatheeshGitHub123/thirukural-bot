@@ -247,7 +247,7 @@
       .then(data => {
         if (data.length) {
           const { id, Kural, Vilakam } = data[0];
-          let extraExplanations = `Did you understand or want more explanations? <div id="more-questions"><button onclick="window.showMoreExplanations(${id})">Yes</button> <button>No</button></div>`;
+          let extraExplanations = `Did you understand or want more explanations? <div id="more-questions"><button onclick="window.showMoreExplanations(${id},'explain')">Yes</button><button onclick="window.showMoreExplanations(${id},'literation')">Transliteration</button><button onclick="window.showMoreExplanations(${id},'couplet')">Couplet</button></div>`;
           const content = `${decodeHtmlEntities(Kural)}<br><br>${decodeHtmlEntities(Vilakam)}<br><br>${extraExplanations}`;
           appendMessage(content, 'bot', botAvatar);
         } else {
@@ -282,8 +282,8 @@
   }
 
   // Make showMoreExplanations accessible globally
-  window.showMoreExplanations = function (id) {
-    const url = `https://thirukural-bot-backend-production.up.railway.app/api/thirukkurals/${id}`;
+  window.showMoreExplanations = function (id,type) {
+    const url = `https://thirukural-bot-backend-production.up.railway.app/api/thirukkural/${id}`;
     fetch(url,{
         method: 'GET',
         headers: {
@@ -293,12 +293,21 @@
       })
       .then(res => res.json())
       .then(data => {
-        const { Parimezhalagar_Urai, M_Varadharajanar, Solomon_Pappaiya } = data;
-        const content = `
+        const { Parimezhalagar_Urai, M_Varadharajanar, Solomon_Pappaiya,Transliteration,Couplet } = data;
+        let content;
+        if(type == 'explain'){
+         content = `
           <h3>Parimezhalagar Urai</h3><br>${decodeHtmlEntities(Parimezhalagar_Urai)}
           <br><h3>Varadharajanar Urai</h3><br>${decodeHtmlEntities(M_Varadharajanar)}
           <br><h3>Solomon Pappaiya Urai</h3><br>${decodeHtmlEntities(Solomon_Pappaiya)}
         `;
+        }else if(type == 'literation'){
+           content = `<h3>Transliteration</h3><br>${decodeHtmlEntities(Transliteration)}`;
+        }else if(type == 'couplet'){
+             content = `<h3>Couplet</h3><br>${decodeHtmlEntities(Couplet)}`;
+        }else{
+           content = `No Matching Explanations`
+        }
         appendMessage(content, 'bot', botAvatar);
       })
       .catch(() => {
