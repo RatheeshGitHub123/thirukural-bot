@@ -157,6 +157,13 @@
       border-bottom: 10px solid transparent;
       border-left: 10px solid #d1e7dd;
     }
+    #more-questions {
+      display: flex;
+      gap: 2px;
+    }
+    .padding_zero{
+      padding:0;
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -297,14 +304,14 @@
         let content;
         if(type == 'explain'){
          content = `
-          <h3>Parimezhalagar Urai</h3><br>${decodeHtmlEntities(Parimezhalagar_Urai)}
-          <br><h3>Varadharajanar Urai</h3><br>${decodeHtmlEntities(M_Varadharajanar)}
-          <br><h3>Solomon Pappaiya Urai</h3><br>${decodeHtmlEntities(Solomon_Pappaiya)}
+          <h3 class="padding_zero">Parimezhalagar Urai</h3><br>${decodeHtmlEntities(Parimezhalagar_Urai)}
+          <br><h3 class="padding_zero">Varadharajanar Urai</h3><br>${decodeHtmlEntities(M_Varadharajanar)}
+          <br><h3 class="padding_zero">Solomon Pappaiya Urai</h3><br>${decodeHtmlEntities(Solomon_Pappaiya)}
         `;
         }else if(type == 'literation'){
-           content = `<h3>Transliteration</h3><br>${decodeHtmlEntities(Transliteration)}`;
+           content = `<h3 class="padding_zero">Transliteration</h3><br>${decodeHtmlEntities(Transliteration)}`;
         }else if(type == 'couplet'){
-             content = `<h3>Couplet</h3><br>${decodeHtmlEntities(Couplet)}`;
+             content = `<h3 class="padding_zero">Couplet</h3><br>${decodeHtmlEntities(Couplet)}`;
         }else{
            content = `No Matching Explanations`
         }
